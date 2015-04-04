@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Intonate;
+namespace spec\Intonate\Container;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -15,7 +15,7 @@ class ConcreteSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Intonate\Concrete');
+        $this->shouldHaveType('Intonate\Container\Concrete');
     }
 
     function it_can_instantiate_a_class()
@@ -27,9 +27,9 @@ class ConcreteSpec extends ObjectBehavior
     {
         $this->setClassName('Fake\Bar');
 
-        $parameters = [new \Fake\Foo];
+        $parameters = new \Fake\Foo;
 
-        $this->instance($parameters)->shouldReturnAnInstanceOf('Fake\Bar');
+        $this->instance(compact('parameters'))->shouldReturnAnInstanceOf('Fake\Bar');
     }
 
     function it_returns_false_if_the_class_does_not_have_a_constructor()
@@ -78,6 +78,5 @@ class ConcreteSpec extends ObjectBehavior
 
         $this->shouldThrow('ReflectionException')->duringGetReflection('ReflectionClass');
     }
-
 
 }

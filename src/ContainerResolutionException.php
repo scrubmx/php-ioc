@@ -1,4 +1,4 @@
-<?php  namespace Intonate;
+<?php  namespace Intonate\Container;
 
 use Exception;
 

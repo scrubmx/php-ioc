@@ -1,6 +1,6 @@
 <?php
 
-namespace Intonate;
+namespace Intonate\Container;
 
 class Container
 {

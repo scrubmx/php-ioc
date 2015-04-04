@@ -1,18 +1,16 @@
 <?php
 
-namespace spec\Intonate;
+namespace spec\Intonate\Container;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-
-require_once('fakes.php');
 
 class ContainerSpec extends ObjectBehavior
 {
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Intonate\Container');
+        $this->shouldHaveType('Intonate\Container\Container');
     }
 
     function it_can_receive_new_bindings()

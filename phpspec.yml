@@ -1,4 +1,4 @@
 suites:
     main:
-        namespace: Intonate
-        psr4_prefix: Intonate
+        namespace: Intonate\Container
+        psr4_prefix: Intonate\Container

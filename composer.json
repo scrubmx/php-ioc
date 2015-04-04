@@ -1,12 +1,24 @@
 {
-    "name": "scrubmx/container",
+    "name": "intonate/container",
     "description": "PHP Inversion of Control Container",
+    "authors": [
+        {
+            "name": "Jorge González",
+            "email": "scrub.mx@gmail.com"
+        }
+    ],
     "require-dev": {
+        "php": ">=5.4.0",
         "phpspec/phpspec": "~2.1"
     },
     "autoload": {
         "psr-4": {
-            "Intonate\\": "src/"
+            "Intonate\\Container\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fake\\": "fakes/"
         }
     }
 }
