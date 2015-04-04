@@ -7,7 +7,6 @@ use ReflectionMethod;
 
 class Concrete
 {
-
     private $className;
 
     public function __construct($className)
@@ -27,7 +26,9 @@ class Concrete
      */
     public function instance(array $parameters = [])
     {
-        if ( empty($parameters) ) return new $this->className;
+        if ( empty($parameters) ) {
+            return new $this->className;
+        }
 
         return $this->getReflection()->newInstanceArgs($parameters);
     }

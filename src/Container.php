@@ -4,7 +4,6 @@ namespace Intonate\Container;
 
 class Container
 {
-
     /**
      * Associative array containing all the bindings.
      *
@@ -23,15 +22,15 @@ class Container
      */
     public function make($abstract)
     {
-        if ( class_exists($abstract) ) {
+        if (class_exists($abstract)) {
             return $this->build($abstract);
         }
 
-        if ( array_key_exists($abstract, $this->bindings) ) {
+        if (array_key_exists($abstract, $this->bindings)) {
             return $this->build($this->bindings[ $abstract ]);
         }
 
-        throw new ContainerResolutionException;
+        throw new ContainerResolutionException();
     }
 
     /**
@@ -89,5 +88,4 @@ class Container
 
         return $parameters;
     }
-
 }
