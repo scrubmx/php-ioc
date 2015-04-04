@@ -36,23 +36,21 @@ class Container
         throw new ContainerResolutionException;
     }
 
+    /**
+     * Builds the instance of the provided class name
+     * Recursively resolves any dependencies that the object might have.
+     *
+     * @param $className
+     *
+     * @return mixed
+     */
     public function build($className)
     {
         $concrete = new Concrete($className);
 
-        if ( $concrete->hasConstructor() )
-        {
-            $parameters = [];
+        $parameters = ( $concrete->hasConstructor() ) ? $this->getParameters($concrete) : [];
 
-            foreach( $concrete->getParameters() as $parameter )
-            {
-                $parameters[] = $this->make( $parameter->getClass()->name );
-            }
-
-            return $concrete->instance($parameters);
-        }
-
-        return $concrete->instance();
+        return $concrete->instance($parameters);
     }
 
     /**
@@ -74,6 +72,25 @@ class Container
     public function bindings()
     {
         return $this->bindings;
+    }
+
+    /**
+     * @param $concrete
+     *
+     * @throws \Intonate\ContainerResolutionException
+     *
+     * @return array
+     */
+    protected function getParameters($concrete)
+    {
+        $parameters = [];
+
+        foreach ($concrete->getParameters() as $parameter)
+        {
+            $parameters[] = $this->make($parameter->getClass()->name);
+        }
+
+        return $parameters;
     }
 
 }
