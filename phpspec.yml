@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: Intonate
+        psr4_prefix: Intonate
