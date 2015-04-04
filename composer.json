@@ -1,6 +1,9 @@
 {
     "name": "intonate/container",
     "description": "PHP Inversion of Control Container",
+    "keywords": ["php", "intonate", "container", "dependency", "injection"],
+    "license": "MIT",
+    "type": "package",
     "authors": [
         {
             "name": "Jorge González",
