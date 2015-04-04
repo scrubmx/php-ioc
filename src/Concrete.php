@@ -26,7 +26,7 @@ class Concrete
      */
     public function instance(array $parameters = [])
     {
-        if ( empty($parameters) ) {
+        if (empty($parameters)) {
             return new $this->className;
         }
 
