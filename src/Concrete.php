@@ -27,7 +27,7 @@ class Concrete
     public function instance(array $parameters = [])
     {
         if (empty($parameters)) {
-            return new $this->className;
+            return new $this->className();
         }
 
         return $this->getReflection()->newInstanceArgs($parameters);
