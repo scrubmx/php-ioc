@@ -1,6 +1,9 @@
-<?php  namespace Fake; 
+<?php
 
-class Baz {
+namespace Fake;
+
+class Baz
+{
 
     private $foo;
 
@@ -10,7 +13,7 @@ class Baz {
      * @param \Fake\Foo $foo
      * @param \Fake\Bar $bar
      */
-    function __construct(Foo $foo, Bar $bar)
+    public function __construct(Foo $foo, Bar $bar)
     {
         $this->foo = $foo;
         $this->bar = $bar;

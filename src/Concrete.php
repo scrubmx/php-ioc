@@ -1,19 +1,22 @@
-<?php namespace Intonate\Container;
+<?php
+
+namespace Intonate\Container;
 
 use ReflectionClass;
 use ReflectionMethod;
 
-class Concrete {
+class Concrete
+{
 
     private $className;
 
-    function __construct($className)
+    public function __construct($className)
     {
         $this->className = $className;
     }
 
     /**
-     * Returns an instance of the specified class
+     * Returns an instance of the specified class.
      *
      * It can pass any number of parameters to the constructor
      * from the provided array of parameters.
@@ -75,5 +78,4 @@ class Concrete {
     {
         $this->className = $className;
     }
-
 }

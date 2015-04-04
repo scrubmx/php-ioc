@@ -17,7 +17,7 @@ class Container
      *
      * @param $abstract
      *
-     * @throws \Intonate\ContainerResolutionException
+     * @throws \Intonate\Container\ContainerResolutionException
      *
      * @return mixed
      */
@@ -77,7 +77,7 @@ class Container
     /**
      * @param $concrete
      *
-     * @throws \Intonate\ContainerResolutionException
+     * @throws \Intonate\Container\ContainerResolutionException
      *
      * @return array
      */

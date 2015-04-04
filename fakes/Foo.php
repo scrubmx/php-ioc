@@ -2,7 +2,8 @@
 
 namespace Fake;
 
-class Foo {
+class Foo
+{
 
     // ...
 
