@@ -4,7 +4,6 @@ namespace Fake;
 
 class Baz
 {
-
     private $foo;
 
     private $bar;
@@ -18,5 +17,4 @@ class Baz
         $this->foo = $foo;
         $this->bar = $bar;
     }
-
 }

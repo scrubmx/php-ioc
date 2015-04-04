@@ -4,7 +4,5 @@ namespace Fake;
 
 class Foo
 {
-
     // ...
-
 }

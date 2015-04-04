@@ -27,10 +27,7 @@ class Concrete
      */
     public function instance(array $parameters = [])
     {
-        if ( empty($parameters) )
-        {
-            return new $this->className;
-        }
+        if ( empty($parameters) ) return new $this->className;
 
         return $this->getReflection()->newInstanceArgs($parameters);
     }
@@ -50,7 +47,7 @@ class Concrete
      */
     public function getReflection()
     {
-        return new ReflectionClass( $this->className );
+        return new ReflectionClass($this->className);
     }
 
     /**

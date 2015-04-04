@@ -3,7 +3,6 @@
 namespace spec\Intonate\Container;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ConcreteSpec extends ObjectBehavior
 {
@@ -26,7 +25,7 @@ class ConcreteSpec extends ObjectBehavior
     {
         $this->setClassName('Fake\Bar');
 
-        $parameters = new \Fake\Foo;
+        $parameters = new \Fake\Foo();
 
         $this->instance(compact('parameters'))->shouldReturnAnInstanceOf('Fake\Bar');
     }

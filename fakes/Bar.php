@@ -4,7 +4,6 @@ namespace Fake;
 
 class Bar
 {
-
     private $foo;
 
     /**
@@ -14,5 +13,4 @@ class Bar
     {
         $this->foo = $foo;
     }
-
 }

@@ -23,13 +23,11 @@ class Container
      */
     public function make($abstract)
     {
-        if ( class_exists($abstract) )
-        {
+        if ( class_exists($abstract) ) {
             return $this->build($abstract);
         }
 
-        if ( array_key_exists($abstract, $this->bindings) )
-        {
+        if ( array_key_exists($abstract, $this->bindings) ) {
             return $this->build($this->bindings[ $abstract ]);
         }
 
@@ -48,7 +46,7 @@ class Container
     {
         $concrete = new Concrete($className);
 
-        $parameters = ( $concrete->hasConstructor() ) ? $this->getParameters($concrete) : [];
+        $parameters = $concrete->hasConstructor() ? $this->getParameters($concrete) : [];
 
         return $concrete->instance($parameters);
     }
@@ -85,8 +83,7 @@ class Container
     {
         $parameters = [];
 
-        foreach ($concrete->getParameters() as $parameter)
-        {
+        foreach ($concrete->getParameters() as $parameter) {
             $parameters[] = $this->make($parameter->getClass()->name);
         }
 
