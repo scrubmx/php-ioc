@@ -74,8 +74,6 @@ class Container
     /**
      * @param $concrete
      *
-     * @throws \Intonate\Container\ContainerResolutionException
-     *
      * @return array
      */
     protected function getParameters($concrete)

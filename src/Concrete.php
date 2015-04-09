@@ -52,7 +52,7 @@ class Concrete
     }
 
     /**
-     * @return \ReflectionParameter[]
+     * @return \ReflectionParameter
      */
     public function getParameters()
     {
