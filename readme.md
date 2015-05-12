@@ -13,15 +13,15 @@ Tight coupling is when a group of classes are highly dependent on one another. T
 Consider the following class:
 
 ```php
-    class PasswordReminder {
-        private $db;
-        private $mailer;
+class PasswordReminder {
+    private $db;
+    private $mailer;
 
-        public function __construct(MySQL $db, UserMailer $mailer) {
-            $this->db = $db;
-            $this->mailer = $mailer;
-        }
+    public function __construct(MySQL $db, UserMailer $mailer) {
+        $this->db = $db;
+        $this->mailer = $mailer;
     }
+}
 ```
 In the above example we see how PasswordReminder is tightly coupled with the concrete implementations of it's dependencies and this creates all sorts of problems.
 
@@ -31,28 +31,28 @@ So far we know we want to reduce coupling and depend on abstractions rather than
 * First we need a container to explicitly declare which implementation we want to use when we are trying to resolve an interface
 
 ```php
-    $container->bind('DBInterface', 'MySQL');
-    $container->bind('MailerInterface', 'UserMailer');
+$container->bind('DBInterface', 'MySQL');
+$container->bind('MailerInterface', 'UserMailer');
 ```
 
 * Then we can change our PasswordReminder class to accept those interfaces
 
 ```php
-    class PasswordReminder {
-        private $db;
-        private $mailer;
+class PasswordReminder {
+    private $db;
+    private $mailer;
 
-        public function __construct(DBInterface $db, MailerInterface $mailer) {
-            $this->db = $db;
-            $this->mailer = $mailer;
-        }
+    public function __construct(DBInterface $db, MailerInterface $mailer) {
+        $this->db = $db;
+        $this->mailer = $mailer;
     }
+}
 ```
 
 * When we want to create a new instance we just ask the container to build it for us:
 
 ```php
-    $passwordReminder = $container->make('PasswordReminder');
+$passwordReminder = $container->make('PasswordReminder');
 ```
 
 Is now the container responsibility to map those interfaces to the concrete implementations and build the PasswordReminder class for you.
