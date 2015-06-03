@@ -60,3 +60,7 @@ Is now the container responsibility to map those interfaces to the concrete impl
 Now it's very easy to write unit tests because we can easily create mock versions of the interfaces and the code is now much more flexible. If for example we want to change database drivers we just update the container binding and we are done.
 
 So now that we have successfully moved the responsibility of building these complex objects to the container we also have decoupled our code in the process. 
+
+### License
+
+PHP-IoC is open-sourced software licensed under the [MIT license](https://github.com/scrubmx/php-ioc/blob/master/license.txt)
